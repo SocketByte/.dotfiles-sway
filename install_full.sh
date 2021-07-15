@@ -181,6 +181,6 @@ arch-chroot /mnt mkinitcpio -P
 
 # Continue the installation.
 cp dotfiles/install.sh /mnt/
-cp -r dotfiles /mnt/home/$USER/.dotfiles
+cp -r dotfiles /mnt/home/$USER_NAME/.dotfiles
 arch-chroot /mnt chmod +x install.sh
 arch-chroot /mnt ./install.sh
