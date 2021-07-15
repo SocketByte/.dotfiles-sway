@@ -19,7 +19,7 @@ BLUETOOTH=yes
 BLUETOOTH_AUDIO=yes
 
 #  Graphics Drivers
-DRIVER="nouveau" # nouveau, amd, nvidia, nvidia-dkms, intel
+DRIVER="nouveau" # nouveau, amd, intel
 
 #  Kernel
 # Be aware that "nvidia" package won't work with custom kernels, use "nvidia-dkms" instead.
@@ -142,12 +142,6 @@ echo "127.0.0.1 localhost\n::1       localhost\n127.0.1.1 archlinux.localdomain 
 case $DRIVER in
   "nouveau")
     pac "mesa"
-    ;;
-  "nvidia")
-    pac "nvidia"
-    ;;
-  "nvidia-dkms")
-    pac "nvidia-dkms"
     ;;
   "amd")
     pac "mesa vulkan-radeon xf86-video-amdgpu libva-mesa-driver mesa-vdpau"

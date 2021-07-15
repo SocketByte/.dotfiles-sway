@@ -59,3 +59,5 @@ Running the script is magically easy!
 ```
 ./dotfiles/install.sh
 ```
+
+_Remember to run this script while mounted on your root partition!_
