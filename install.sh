@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Configuration
 USER_NAME=user # user name
@@ -22,7 +23,7 @@ systemctl enable NetworkManager.service
 systemctl enable bluetooth.service
 systemctl enable ly.service
 
-echo "MOZ_ENABLE_WAYLAND=1" > /etc/environment
+echo "MOZ_ENABLE_WAYLAND=1\nLIBSEAT_BACKEND=logind" > /etc/environment
 
 cd /home/$USER_NAME/.dotfiles
 mkdir /home/$USER_NAME/.config
@@ -31,3 +32,4 @@ stow --adopt -vt /home/$USER_NAME/.config .config
 stow --adopt -vt /home/$USER_NAME/.images .images
 
 rm -rf install.sh
+reboot
