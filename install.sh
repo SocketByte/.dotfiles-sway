@@ -25,6 +25,8 @@ systemctl enable ly.service
 echo "MOZ_ENABLE_WAYLAND=1" > /etc/environment
 
 cd /home/$USER_NAME/.dotfiles
+mkdir /home/$USER_NAME/.config
+mkdir /home/$USER_NAME/.images
 stow --adopt -vt /home/$USER_NAME/.config .config
 stow --adopt -vt /home/$USER_NAME/.images .images
 
