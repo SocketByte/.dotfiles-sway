@@ -167,7 +167,7 @@ echo "${USER_NAME} ALL=(ALL) ALL" >> /mnt/etc/sudoers
 
 arch-chroot /mnt chown -R $USER_NAME /home/$USER_NAME
 
-pac "grub efibootmgr"
+pac "grub efibootmgr amd-ucode"
 
 if [ $PARTITION_MODE = uefi ]; then
   mkdir /mnt/boot/efi

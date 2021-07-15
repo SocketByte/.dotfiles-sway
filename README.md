@@ -23,9 +23,10 @@ Treat these dotfiles as a solid, sensible base package for your own dotfiles. En
 
 ## Installation
 
-First clone the repository using the command below.
+First install Git and clone the repository using the command below.
 
 ```
+pacman -Sy git
 git clone https://github.com/SocketByte/dotfiles
 ```
 
@@ -34,8 +35,10 @@ git clone https://github.com/SocketByte/dotfiles
 These scripts were made for configurability and flexibility, please configure them accordingly to your taste. **Especially your drive device name and partitioning**.
 
 ```
-nano /dotfiles/install_full.sh
+nano dotfiles/install_full.sh
 ```
+
+_IMPORTANT_: If you're using a different user name than "user" you must also change the user name in the `/install.sh`.
 
 When you're ready to go - just run the script and let the magic happen!
 
@@ -43,13 +46,13 @@ When you're ready to go - just run the script and let the magic happen!
 ./dotfiles/install_full.sh
 ```
 
-After installation you just need to reboot your PC.
+After installation the script will automatically reboot your PC.
 
 ### Only Sway
 
 This is for people that are _very cool_ and made it past the Arch Way's installation process. This script will install Sway and other important utilities. (And dotfiles, of course)
 
-Of course like in the full script - you really should look into what you're installing. And you will find some fancy configuration options too!
+Of course like in the full script - you really should look into what you're installing.
 
 Running the script is magically easy!
 
