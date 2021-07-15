@@ -26,3 +26,5 @@ arch-chroot /mnt systemctl enable ly.service
 echo "MOZ_ENABLE_WAYLAND=1" > /mnt/etc/environment
 
 arch-chroot /mnt git clone https://github.com/SocketByte/dotfiles
+arch-chroot /mnt cd /dotfiles
+arch-chroot /mnt stow --adopt -vt ~ *

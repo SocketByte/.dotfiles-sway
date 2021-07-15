@@ -38,14 +38,6 @@ ROOT_PASSWORD=test
 #  Bootloader
 BOOTLOADER="grub"
 
-#  Desktop Environment
-DESKTOP_ENVIRONMENT="sway"
-
-#  Advanced desktop settings
-DE_GNOME_PACKAGES="gnome gnome-tweaks firefox"
-DE_KDE_PACKAGES="plasma konsole dolphin firefox"
-DE_SWAY_PACKAGES=""
-
 # Colors
 BLUE='\033[1;34m'
 NC='\033[0m'
