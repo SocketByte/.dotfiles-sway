@@ -61,3 +61,13 @@ Running the script is magically easy!
 ```
 
 _Remember to run this script while mounted on your root partition!_
+
+## Caveats
+- Waybar configuration is not yet finished.
+- There's no support for any virtualized environment due to Wayland being barely supported on VMware or VirtualBox.
+- You can't use Nvidia proprietary drivers with Sway. _Always_ use Nouveau.
+```
+All proprietary graphics drivers are unsupported. This includes the Nvidia proprietary driver. The open source Nouveau driver is required instead. This is not going to change, don't ask. Tip: buy your hardware with open source support in mind.
+
+~ Sway Wiki
+```

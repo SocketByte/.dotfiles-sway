@@ -48,13 +48,13 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 
 # VSCode extensions
 for i in ${EXTENSIONS[@]}; do
-  code --install-extension $i
+  sudo --user=$USER_NAME sh -c "code --unhandled-rejections=strict --force --install-extension $i"
 done
 
 # Dotfiles symlink farm
 cd /home/$USER_NAME/.dotfiles
-mkdir /home/$USER_NAME/.config
-mkdir /home/$USER_NAME/.images
+mkdir -p /home/$USER_NAME/.config
+mkdir -p /home/$USER_NAME/.images
 stow --adopt -vt /home/$USER_NAME/.config .config
 stow --adopt -vt /home/$USER_NAME/.images .images
 stow --adopt -vt /home/$USER_NAME zsh
@@ -62,6 +62,5 @@ stow --adopt -vt /home/$USER_NAME zsh
 # Cleaning up and rebooting
 rm -rf /install.sh
 
+echo "Script has finished. Please reboot your PC using 'reboot' command."
 exit
-umount -R /mnt
-reboot
