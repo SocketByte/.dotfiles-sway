@@ -1,6 +1,12 @@
 * {
   font-family: Iosevka;
+  font-size: 12pt;
   color: white;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+  transition-duration: 0s;
 }
 
 window#waybar {
@@ -8,31 +14,32 @@ window#waybar {
   opacity: 0.85;
 }
 
-#window {
+#window,
+#memory,
+#disk,
+#pulseaudio,
+#custom-weather,
+#cpu {
   padding-left: 1rem;
-}
-
-#network {
   padding-right: 1rem;
 }
 
-#tray {
-  background: red;
+#custom-weather {
+  padding-left: 2rem;
+  font-weight: bold;
 }
 
 #workspaces {
   background: #962a54;
   color: white;
+  font-weight: bold;
+  border-radius: 0 1rem 1rem 0;
 }
-
 #workspaces button {
   background: transparent;
 }
 
-#workspaces button:hover {
-  background: transparent;
-}
-
 #workspaces button.focused {
-  background: transparent;
+  background: #7a2043;
+  border-radius: 1rem;
 }

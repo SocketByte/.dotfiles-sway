@@ -4,32 +4,64 @@ set -e
 # Configuration
 USER_NAME=user # user name
 
+EXTENSIONS=(
+rocketseat.theme-omni
+ms-vscode.cpptools
+esbenp.prettier-vscode
+dbaeumer.vscode-eslint
+golang.go
+ms-vscode.cmake-tools
+steoates.autoimport
+formulahendry.auto-rename-tag
+)
+
 # The script begins here.
 pac() {
   pacman -Syu --noconfirm --needed $1
 }
 
-pac "sudo nano git cmake networkmanager linux-headers openssh neofetch bashtop bat stow"
-pac "bluez bluez-utils alsa-utils pipewire pipewire-alsa pipewire-pulse"
+# Utilities
+pac "sudo nano git cmake networkmanager linux-headers noto-fonts-emoji openssh neofetch bashtop bat stow zsh wget wl-clipboard"
+pac "bluez bluez-utils alsa-utils pipewire pipewire-alsa pipewire-pulse blueberry"
 
+# Yay, fonts and other AUR tools
 git clone https://aur.archlinux.org/yay.git
 chown -R $USER_NAME yay
 sudo --user=$USER_NAME sh -c "cd /yay && makepkg -si"
-sudo --user=$USER_NAME sh -c "yay --noconfirm -S ly ttf-iosevka ttf-meslo"
+sudo --user=$USER_NAME sh -c "yay --noconfirm -S ly ttf-iosevka ttf-meslo visual-studio-code-bin via-bin"
 
-pac "sway waybar xorg-xwayland wofi alacritty firefox"
+# Sway & desktop tools
+pac "sway waybar slurp grim xorg-xwayland wofi alacritty firefox telegram-desktop discord"
 
+# Services
 systemctl enable NetworkManager.service
 systemctl enable bluetooth.service
 systemctl enable ly.service
 
+# Environment
 echo "MOZ_ENABLE_WAYLAND=1\nLIBSEAT_BACKEND=logind" > /etc/environment
 
+# Zsh + Oh My Zsh
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+
+# VSCode extensions
+for i in ${EXTENSIONS[@]}; do
+  code --install-extension $i
+done
+
+# Dotfiles symlink farm
 cd /home/$USER_NAME/.dotfiles
 mkdir /home/$USER_NAME/.config
 mkdir /home/$USER_NAME/.images
 stow --adopt -vt /home/$USER_NAME/.config .config
 stow --adopt -vt /home/$USER_NAME/.images .images
+stow --adopt -vt /home/$USER_NAME zsh
 
-rm -rf install.sh
+# Cleaning up and rebooting
+rm -rf /install.sh
+
+exit
+umount -R /mnt
 reboot

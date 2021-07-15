@@ -28,15 +28,30 @@ focus output DP-1
 
 output * background '~/.images/wallpaper.jpg' fill
 
+workspace 1 output DP-1
+workspace 2 output HDMI-A-1
+workspace 3 output DP-1
+
+workspace 1
+exec firefox
+
+workspace 3
+exec telegram-desktop
+exec discord
+
+exec 'sleep 2; swaymsg workspace 1'
+
 # Input
 input type:keyboard {
     xkb_layout pl
 }
 
 # Bindings
+bindsym Print+Ctrl+Shift exec grim -g "$(slurp -d)" - | wl-copy
+
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
-bindsym $mod+Tab exec wofi --show run --allow-images 
+bindsym $mod+Tab exec wofi --show run --allow-images
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
@@ -71,9 +86,6 @@ bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
-   
-bindsym $mod+b splith
-bindsym $mod+v splitv
 
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
@@ -93,6 +105,6 @@ bindsym $mod+r mode "resize"
 
 bar {
     swaybar_command waybar
-}    
+}
 
 include /etc/sway/config.d/*

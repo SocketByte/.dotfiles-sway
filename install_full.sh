@@ -165,6 +165,8 @@ printf "$USER_PASSWORD\n$USER_PASSWORD" | arch-chroot /mnt passwd $USER_NAME
 
 echo "${USER_NAME} ALL=(ALL) ALL" >> /mnt/etc/sudoers
 
+arch-chroot /mnt chown -R $USER_NAME /home/$USER_NAME
+
 pac "grub efibootmgr"
 
 if [ $PARTITION_MODE = uefi ]; then

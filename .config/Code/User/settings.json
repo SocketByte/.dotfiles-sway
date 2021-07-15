@@ -1,0 +1,55 @@
+{
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 0,
+
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Meslo LG L",
+  "editor.tabSize": 2,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.smoothScrolling": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.mouseWheelZoom": true,
+  "editor.linkedEditing": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontFamily": "Iosevka Extended",
+  "terminal.integrated.profiles.linux": {
+    "zsh": {
+      "path": "zsh"
+    }
+  },
+
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/deps": true
+  },
+
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.autoSave": "onWindowChange",
+
+  "workbench.list.smoothScrolling": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.showTabs": true,
+  "workbench.editor.labelFormat": "short",
+  "workbench.editor.enablePreview": false,
+  "workbench.startupEditor": "welcomePage",
+  "workbench.colorTheme": "Omni",
+
+  "breadcrumbs.enabled": false
+}
