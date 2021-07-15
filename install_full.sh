@@ -46,7 +46,7 @@ pac() {
   arch-chroot /mnt pacman -Syu --noconfirm --needed $1
 }
 
-echo -e "\n${BLUE}Arch Script Installer"
+echo -e "\n${BLUE}.dotfiles Installation"
 echo -e "   ${NC}by SocketByte\n"
 read -p "Do you want to continue? [y/N] " yn
 case $yn in
