@@ -12,7 +12,6 @@ dbaeumer.vscode-eslint
 golang.go
 ms-vscode.cmake-tools
 steoates.autoimport
-formulahendry.auto-rename-tag
 )
 
 # The script begins here.
