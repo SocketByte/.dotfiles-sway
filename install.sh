@@ -48,7 +48,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 
 # VSCode extensions
 for i in ${EXTENSIONS[@]}; do
-  sudo --user=$USER_NAME sh -c "code --unhandled-rejections=strict --force --install-extension $i"
+  sudo --user=$USER_NAME sh -c "code --force --install-extension $i"
 done
 
 # Dotfiles symlink farm
