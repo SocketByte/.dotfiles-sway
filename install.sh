@@ -46,11 +46,6 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
-# VSCode extensions
-for i in ${EXTENSIONS[@]}; do
-  sudo --user=$USER_NAME sh -c "code --force --install-extension $i"
-done
-
 # Dotfiles symlink farm
 cd /home/$USER_NAME/.dotfiles
 mkdir -p /home/$USER_NAME/.config
@@ -58,6 +53,11 @@ mkdir -p /home/$USER_NAME/.images
 stow --adopt -vt /home/$USER_NAME/.config .config
 stow --adopt -vt /home/$USER_NAME/.images .images
 stow --adopt -vt /home/$USER_NAME zsh
+
+# VSCode extensions
+for i in ${EXTENSIONS[@]}; do
+  sudo --user=$USER_NAME sh -c "code --force --install-extension $i"
+done
 
 # Cleaning up and rebooting
 rm -rf /install.sh
