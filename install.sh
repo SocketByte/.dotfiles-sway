@@ -44,7 +44,7 @@ echo "MOZ_ENABLE_WAYLAND=1\nLIBSEAT_BACKEND=logind" > /etc/environment
 
 # Zsh + Oh My Zsh
 export RUNZSH=no
-sudo --user=$USER_NAME sh -c "sh -c '$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)' '' --unattended"
+sudo --user=$USER_NAME sh -c "wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
 git clone https://github.com/zsh-users/zsh-autosuggestions.git /home/$USER_NAME/.oh-my-zsh/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/$USER_NAME/.oh-my-zsh/plugins/zsh-syntax-highlighting
 sudo --user=$USER_NAME sh -c "chsh -s $(which zsh)"
