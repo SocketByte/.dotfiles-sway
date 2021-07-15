@@ -1,0 +1,62 @@
+* {
+  font-family: Iosevka;
+  border-color: transparent;
+  outline-style: none;
+}
+
+window {
+  border-radius: 1rem;
+  background: #1b182c;
+  color: white;
+  padding: 1rem;
+}
+
+#input {
+  border-radius: 1rem;
+  border-color: transparent;
+  background: #962a54;
+  color: white;
+  font-size: 16pt;
+  padding: 0.5rem;
+  outline: none;
+}
+
+#input:focus {
+  border-color: transparent;
+}
+
+#selected {
+  background: #a33962;
+  border-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 1rem;
+}
+
+#entry:nth-child(even) {
+  background: #1f1c33;
+  border-radius: 1rem;
+}
+
+#text {
+  padding: 0.75rem;
+  font-size: 13pt;
+}
+
+#outer-box {
+  background: transparent;
+  padding: 1rem;
+}
+
+#inner-box {
+  background: transparent;
+}
+
+#entry {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border-color: transparent;
+  border-radius: 1rem;
+}

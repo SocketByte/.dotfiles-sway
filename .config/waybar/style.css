@@ -1,0 +1,38 @@
+* {
+  font-family: Iosevka;
+  color: white;
+}
+
+window#waybar {
+  background: #1b182c;
+  opacity: 0.85;
+}
+
+#window {
+  padding-left: 1rem;
+}
+
+#network {
+  padding-right: 1rem;
+}
+
+#tray {
+  background: red;
+}
+
+#workspaces {
+  background: #962a54;
+  color: white;
+}
+
+#workspaces button {
+  background: transparent;
+}
+
+#workspaces button:hover {
+  background: transparent;
+}
+
+#workspaces button.focused {
+  background: transparent;
+}
