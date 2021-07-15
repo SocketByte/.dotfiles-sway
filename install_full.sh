@@ -180,4 +180,6 @@ arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 arch-chroot /mnt mkinitcpio -P
 
 # Continue the installation.
-./install.sh
+cp install.sh /mnt/
+arch-chroot /mnt chmod +x install.sh
+arch-chroot /mnt ./install.sh
