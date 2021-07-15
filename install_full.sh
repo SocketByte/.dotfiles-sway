@@ -83,7 +83,7 @@ done
 
 PART_PRIMARY=""
 if [ $PARTITION_MODE = uefi ]; then
-  parted -s $DEVICE "mklabel gpt mkpart efi fat32 2048B 261MiB mkpart swap linux-swap 261MiB $SWAP_SIZE mkpart primary ext4 $SWAP_SIZE 100% set 1 esp on"
+  parted -s $DEVICE "mklabel gpt mkpart efi fat32 1MiB 261MiB mkpart swap linux-swap 261MiB $SWAP_SIZE mkpart primary ext4 $SWAP_SIZE 100% set 1 esp on"
   if [ $NVME = yes ]; then
     PART_PRIMARY="${DEVICE}p3"
   else
@@ -180,6 +180,7 @@ arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 arch-chroot /mnt mkinitcpio -P
 
 # Continue the installation.
-cp install.sh /mnt/
+cp dotfiles/install.sh /mnt/
+cp dotfiles /mnt/home/$USER/.dotfiles
 arch-chroot /mnt chmod +x install.sh
 arch-chroot /mnt ./install.sh

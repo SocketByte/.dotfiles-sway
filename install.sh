@@ -13,9 +13,8 @@ pac "bluez bluez-utils alsa-utils pipewire pipewire-alsa pipewire-pulse"
 
 git clone https://aur.archlinux.org/yay.git
 chown -R $USER yay
-cd yay
-su - $USER -c "makepkg -si"
-su - $USER -c "yay -S ly ttf-iosevka ttf-meslo"
+sudo --user=$USER sh -c "cd /yay && makepkg -si"
+sudo --user=$USER sh -c "yay --noconfirm -S ly ttf-iosevka ttf-meslo"
 
 pac "sway waybar xorg-xwayland wofi alacritty firefox"
 
@@ -25,6 +24,8 @@ systemctl enable ly.service
 
 echo "MOZ_ENABLE_WAYLAND=1" > /etc/environment
 
-git clone https://github.com/SocketByte/dotfiles
-cd /dotfiles
-stow --adopt -vt ~ *
+cd /home/$USER/.dotfiles
+stow --adopt -vt /home/$USER/.config .config
+stow --adopt -vt /home/$USER/.images .images
+
+rm -rf install.sh
