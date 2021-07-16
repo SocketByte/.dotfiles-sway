@@ -15,9 +15,6 @@ TIMEZONE="Europe/Warsaw"
 REFLECTOR=yes
 REFLECTOR_COUNTRY="Poland"
 
-BLUETOOTH=yes
-BLUETOOTH_AUDIO=yes
-
 #  Graphics Drivers
 DRIVER="nouveau" # nouveau, amd, intel
 
