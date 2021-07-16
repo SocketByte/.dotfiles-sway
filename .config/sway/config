@@ -39,7 +39,7 @@ workspace 3
 exec telegram-desktop
 exec discord
 
-exec 'sleep 2; swaymsg workspace 1'
+exec 'sleep 3; swaymsg workspace 1'
 
 # Input
 input type:keyboard {
