@@ -3,6 +3,8 @@ set -e
 
 # Configuration
 USER_NAME=user # user name
+GIT_NAME="SocketByte"
+GIT_EMAIL="poczta.xvacuum@gmail.com"
 
 EXTENSIONS=(
 rocketseat.theme-omni
@@ -20,7 +22,7 @@ pac() {
 }
 
 # Utilities
-pac "sudo nano git cmake networkmanager linux-headers noto-fonts-emoji openssh neofetch bashtop bat stow zsh wget wl-clipboard"
+pac "sudo nano git cmake networkmanager linux-headers noto-fonts-emoji openssh neofetch bashtop bat stow zsh wget wl-clipboard otf-font-awesome"
 pac "bluez bluez-utils alsa-utils pipewire pipewire-alsa pipewire-pulse blueberry"
 
 # Yay, fonts and other AUR tools
@@ -42,9 +44,10 @@ echo "MOZ_ENABLE_WAYLAND=1\nLIBSEAT_BACKEND=logind" > /etc/environment
 
 # Zsh + Oh My Zsh
 export RUNZSH=no
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+sudo --user=$USER_NAME sh -c "sh -c '$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)' '' --unattended"
+git clone https://github.com/zsh-users/zsh-autosuggestions.git /home/$USER_NAME/.oh-my-zsh/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/$USER_NAME/.oh-my-zsh/plugins/zsh-syntax-highlighting
+sudo --user=$USER_NAME sh -c "chsh -s $(which zsh)"
 
 # Dotfiles symlink farm
 cd /home/$USER_NAME/.dotfiles
@@ -54,10 +57,16 @@ stow --adopt -vt /home/$USER_NAME/.config .config
 stow --adopt -vt /home/$USER_NAME/.images .images
 stow --adopt -vt /home/$USER_NAME zsh
 
+chown -R $USER_NAME /home/$USER_NAME
+
 # VSCode extensions
 for i in ${EXTENSIONS[@]}; do
   sudo --user=$USER_NAME sh -c "code --force --install-extension $i"
 done
+
+# Git
+git config --global user.name $GIT_NAME
+git config --global user.email $GIT_EMAIL
 
 # Cleaning up and rebooting
 rm -rf /install.sh

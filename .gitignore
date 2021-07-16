@@ -1,0 +1,26 @@
+.config/Code/Backups
+.config/Code/blob_storage
+.config/Code/Cache
+.config/Code/CachedData
+.config/Code/CachedExtensions
+.config/Code/CachedExtensionVSIXs
+.config/Code/Code Cache
+.config/Code/Crash Reports
+.config/Code/Dictionaries
+.config/Code/exthost Crash Reports
+.config/Code/GPUCache
+.config/Code/Local Storage
+.config/Code/logs
+.config/Code/Service Worker
+.config/Code/Cookies
+.config/Code/Cookies-journal
+.config/Code/languagepacks.json
+.config/Code/machineid
+.config/Code/Network Persistent State
+.config/Code/QuotaManager
+.config/Code/QuotaManager-journal
+.config/Code/storage.json
+.config/Code/TransportSecurity
+.config/Code/User/globalStorage
+.config/Code/User/snippets
+.config/Code/User/workspaceStorage
