@@ -2,7 +2,7 @@
 set -e
 
 # Configuration
-USER_NAME=test # user name
+USER_NAME=user # user name
 GIT_NAME="SocketByte"
 GIT_EMAIL="poczta.xvacuum@gmail.com"
 
@@ -22,7 +22,7 @@ pac() {
 }
 
 # Utilities
-pac "sudo nano git cmake networkmanager linux-headers noto-fonts-emoji openssh neofetch bashtop bat stow zsh wget wl-clipboard otf-font-awesome"
+pac "sudo nano git cmake imv networkmanager linux-headers noto-fonts-emoji openssh neofetch bashtop bat stow zsh wget wl-clipboard otf-font-awesome"
 pac "bluez bluez-utils alsa-utils pipewire pipewire-alsa pipewire-pulse blueberry"
 
 # Yay, fonts and other AUR tools
