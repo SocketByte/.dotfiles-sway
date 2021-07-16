@@ -9,10 +9,6 @@ This is the result of my attempt at ricing Sway desktop and creating a beautiful
 I heavily recommend (if you actually want to use my configs) to fork this repository and change stuff according to your needs. You really don't need all the things I need, and your Sway key bindings or even VSCode extensions may be completely different. And especially your monitor setup!
 Treat these dotfiles as a solid, sensible base package for your own dotfiles. Enjoy!
 
-## Caveats
-
-- Oh My Zsh installation is currently pretty borked, you have to manually download and install all the required things.
-
 ## Features
 
 - Sensible Sway configuration defaults with quality-of-life tweaks.
@@ -68,6 +64,7 @@ _Remember to run this script while mounted on your root partition!_
 
 ## Caveats
 
+- Oh My Zsh installation is currently pretty borked, you have to manually download and install all the required things.
 - There's no support for any virtualized environment due to Wayland being barely supported on VMware or VirtualBox.
 - You can't use Nvidia proprietary drivers with Sway. _Always_ use Nouveau.
 
