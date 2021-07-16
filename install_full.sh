@@ -22,7 +22,6 @@ BLUETOOTH_AUDIO=yes
 DRIVER="nouveau" # nouveau, amd, intel
 
 #  Kernel
-# Be aware that "nvidia" package won't work with custom kernels, use "nvidia-dkms" instead.
 KERNEL="linux-zen" # linux, linux-hardened, linux-zen, linux-lts
 
 #  Locale
