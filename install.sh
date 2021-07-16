@@ -2,7 +2,7 @@
 set -e
 
 # Configuration
-USER_NAME=user # user name
+USER_NAME=test # user name
 GIT_NAME="SocketByte"
 GIT_EMAIL="poczta.xvacuum@gmail.com"
 
@@ -43,11 +43,12 @@ systemctl enable ly.service
 echo "MOZ_ENABLE_WAYLAND=1\nLIBSEAT_BACKEND=logind" > /etc/environment
 
 # Zsh + Oh My Zsh
-export RUNZSH=no
-sudo --user=$USER_NAME sh -c "wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
-git clone https://github.com/zsh-users/zsh-autosuggestions.git /home/$USER_NAME/.oh-my-zsh/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/$USER_NAME/.oh-my-zsh/plugins/zsh-syntax-highlighting
-sudo --user=$USER_NAME sh -c "chsh -s $(which zsh)"
+# Disabled until I find a way to install it properly, I'm thinking on moving to slimzsh, time will tell.
+# export RUNZSH=no
+# sudo --user=$USER_NAME sh -c "wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
+# git clone https://github.com/zsh-users/zsh-autosuggestions.git /home/$USER_NAME/.oh-my-zsh/plugins/zsh-autosuggestions
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/$USER_NAME/.oh-my-zsh/plugins/zsh-syntax-highlighting
+# sudo --user=$USER_NAME sh -c "chsh -s $(which zsh)"
 
 # Dotfiles symlink farm
 cd /home/$USER_NAME/.dotfiles

@@ -46,7 +46,7 @@
     "custom/weather": {
         "tooltip": false,
         "exec": "curl 'https://wttr.in/Warsaw?format=1'",
-        "interval": 1800
+        "interval": 800
     }
 
 }

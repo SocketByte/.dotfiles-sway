@@ -21,6 +21,7 @@
 .config/Code/QuotaManager-journal
 .config/Code/storage.json
 .config/Code/TransportSecurity
+.config/Code/Session Storage
 .config/Code/User/globalStorage
 .config/Code/User/snippets
 .config/Code/User/workspaceStorage
